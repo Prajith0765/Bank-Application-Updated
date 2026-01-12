@@ -1,4 +1,5 @@
-﻿using BankApplication;
+﻿using Bank_Application;
+using BankApplication;
 
 public class Program
 {
@@ -6,7 +7,21 @@ public class Program
     {
         //Bank bank = new Bank();
         Customer customer;
-        BankOperations bank = new BankOperations();
+        AllBanks allBanks = new AllBanks();
+        BankOperations bankOps = new BankOperations();
+
+        Console.WriteLine("Enter IFSC:");
+        string ifsc = Console.ReadLine();
+
+        Bank bank = allBanks.GetBank(ifsc);
+
+        if (!bankOps.SetBank(bank))
+        {
+            Console.WriteLine("Invalid IFSC Code");
+            return;
+        }
+
+
 
     //For Loop for Iterative Getting user Options
     //while (true)
@@ -35,18 +50,18 @@ public class Program
                     break;
                 //Depositing Amount in the user Account
                 case 3:
-                    bank.depositAmount(bank.getName(), bank.getAmount());
+                    bank.depositAmount(bank.getAccNumber(), bank.getAmount());
                     break;
                 //Withdrawal of Amount from the user Account
                 case 4:
-                    bank.withDrawalAmount(bank.getName(), bank.getAmount());
+                    bank.withDrawalAmount(bank.getAccNumber(), bank.getAmount());
                     break;
                 //Displaying the user Account Details
                 case 5:
-                    bank.displayDetails(bank.getName());
+                    bank.displayDetails(bank.getAccNumber());
                     break;
                 //Exiting from the loop
-                case 6:
+                case 6: 
                     return;
 
             }

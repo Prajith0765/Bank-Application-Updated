@@ -10,16 +10,36 @@ namespace BankApplication
     //A Class which inherits the Properties and Methods of the Bank Class
     internal class BankOperations : Bank
     {
-        //Method to Find the Customer Details by Entering the Name
-        public Customer findCustomer(string name)
+
+        private Bank bank;
+
+        public bool SetBank(Bank bank)
         {
-            return customerList.Find(c => c.name == name);
+            this.bank = bank;
+            return bank != null;
         }
+
+        public void AddCustomer(Customer customer)
+        {
+            bank.AddCustomer(customer);
+        }
+
+        //Method to Find the Customer Details by Entering the Name
+        public Customer customerValue;
+        public Customer findCustomer(int accNumber)
+        {
+            customerDictionary.TryGetValue(accNumber, out customerValue);
+            return customerValue;
+        }
+        /*public Customer findCustomer(string name)
+        //{
+        //    return customerList.Find(c => c.name == name);
+        } */
         //Method to DepositAmount to the Account by entering Holder name
-        public void depositAmount(string name, int amount)
+        public void depositAmount(int accNumber, int amount)
         {
             //Searching and Getting the Exact Customer Details from the list
-            Customer customer = findCustomer(name);
+            Customer customer = findCustomer(accNumber);
             if (customer != null)
             {
                 customer.balance += amount;
@@ -39,10 +59,10 @@ namespace BankApplication
 
         }
         //Method to WithDraw Amount to the Account by entering Holder name
-        public void withDrawalAmount(string name, int amount)
+        public void withDrawalAmount(int accNumber, int amount)
         {
             //Searching and Getting the Exact Customer Details from the list
-            Customer customer = findCustomer(name);
+            Customer customer = findCustomer(accNumber);
             if (customer != null && customer.balance > amount)
             {
                 customer.balance -= amount;
@@ -61,10 +81,10 @@ namespace BankApplication
             }
         }
         //Searching and Display the Exact Customer Details from the list
-        public void displayDetails(string name)
+        public void displayDetails(int accNumber)
         {
             //Searching and Getting the Exact Customer Details from the list
-            Customer customer = findCustomer(name);
+            Customer customer = findCustomer(accNumber);
             if (customer != null)
             {
                 Console.WriteLine("Account Holder Name: " + customer.name);
