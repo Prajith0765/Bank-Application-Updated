@@ -15,7 +15,7 @@ namespace BankApplication
         //A List to Store Customer Details
         protected List<Customer> customerList;
         //Constructor to allocate new List of Customers
-        public Bank()
+        public Bank() 
         {
             customerList = new List<Customer>();
 

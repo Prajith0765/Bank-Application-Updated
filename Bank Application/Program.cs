@@ -8,10 +8,11 @@ public class Program
         Customer customer;
         BankOperations bank = new BankOperations();
 
-        //For Loop for Iterative Getting user Options
-        while (true)
-        {
-            Console.WriteLine("WELCOME TO BANKING APPLICATION");
+    //For Loop for Iterative Getting user Options
+    //while (true)
+    //{
+    Starting:
+        Console.WriteLine("WELCOME TO BANKING APPLICATION");
             Console.WriteLine("1. Create Account");
             Console.WriteLine("2. Delete Account");
             Console.WriteLine("3. Deposit Amount");
@@ -49,6 +50,7 @@ public class Program
                     return;
 
             }
-        }
+        goto Starting;
+        //}
     }
 }
