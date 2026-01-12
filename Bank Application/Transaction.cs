@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace BankApplication
 {
+    //A userDefined Transaction Class to Track 
     internal class Transaction
     {
         public string name; 
@@ -22,7 +23,5 @@ namespace BankApplication
             this.Amount = amount;
             this.dateTime = DateTime.Now;
         } 
-
-        
     }
 }

@@ -25,7 +25,7 @@ namespace BankApplication
                 customer.balance += amount;
                 Console.WriteLine("Deposit Amount : " + amount);
                 Console.WriteLine("Your Current Balance: " + customer.balance);
-
+                //Creating a Transaction Object for the customer to track their deposits
                 Transaction transaction = new Transaction(
                     customer.name,
                     "Amount Deposited",
@@ -48,6 +48,7 @@ namespace BankApplication
                 customer.balance -= amount;
                 Console.WriteLine("Withdrawal Amount : " + amount);
                 Console.WriteLine("Your Current Balance: " + customer.balance);
+                //Creating a Transaction Object for the customer to track their withdrawal
                 Transaction transaction = new Transaction(
                     customer.name,
                     "Amount Withdrawn",
@@ -73,7 +74,7 @@ namespace BankApplication
                 customer.displayTransaction();
             }
         }
-
+        //Printing the customer ist to view the customers in the bank 
         public void printCustomerList(Customer customer)
         {
             foreach (var cust in customerList)

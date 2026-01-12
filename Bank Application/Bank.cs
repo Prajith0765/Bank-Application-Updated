@@ -26,7 +26,7 @@ namespace BankApplication
             if (!customerList.Contains(customer))
             {
                 customerList.Add(customer);
-
+                // While Creating an account to the user it created a Transaction object to track their history
                 Transaction transaction = new Transaction(
                     customer.name,
                     "Account Created",

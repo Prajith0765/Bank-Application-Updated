@@ -15,7 +15,7 @@ namespace BankApplication
         public string accType;
         public long mobileNumber;
         public int balance;
-
+        //A List of Transaction Datatype which stores the transaction details
         public List<Transaction> transactions;
 
         //Constructor to Store and Configure the Customer Datas
@@ -28,7 +28,7 @@ namespace BankApplication
             this.balance = 0;
             this.transactions = new List<Transaction>();
         }
-
+        //Method to Display the transaction History of the user
         public void displayTransaction()
         {
             
