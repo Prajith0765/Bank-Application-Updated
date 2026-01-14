@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Transactions;
 
-namespace BankApplication
+namespace Bank_Application.Entity
 {
     //A self defined class for saving Customer Data
     internal class Customer

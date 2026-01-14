@@ -1,11 +1,10 @@
-﻿using BankApplication;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BankApplication
+namespace Bank_Application.Entity
 {
     //A userDefined Transaction Class to Track 
     internal class Transaction

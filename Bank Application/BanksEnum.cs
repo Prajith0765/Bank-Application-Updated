@@ -1,26 +1,27 @@
-﻿//using BankApplication;
-//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
+﻿
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-//namespace Bank_Application
-//{
+namespace Bank_Application
+{
 
-//    //enum Banks
-//    //{
-//    //    SBI,
-//    //    HDFC,
-//    //    KVB,
-//    //    IOB,
-//    //    UBI,
-//    //}
+    enum BankEnum
+    {
+        SBI = 1,
+        HDFC = 2,
+        KVB = 3,
+        IOB = 4,
+        UBI = 5,
+    }
+}
 //    internal class AllBanks
 //    {
 //        protected Dictionary<string, Bank> banksDictionary;
 
-//        public AllBanks() 
+//        public AllBanks()
 //        {
 //            banksDictionary = new Dictionary<string, Bank>
 //        {
