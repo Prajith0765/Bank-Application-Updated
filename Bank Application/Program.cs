@@ -1,4 +1,4 @@
-﻿using Bank_Application;
+﻿
 using BankApplication;
 
 public class Program
@@ -7,20 +7,7 @@ public class Program
     {
         //Bank bank = new Bank();
         Customer customer;
-        AllBanks allBanks = new AllBanks();
-        BankOperations bankOps = new BankOperations();
-
-        Console.WriteLine("Enter IFSC:");
-        string ifsc = Console.ReadLine();
-
-        Bank bank = allBanks.GetBank(ifsc);
-
-        if (!bankOps.SetBank(bank))
-        {
-            Console.WriteLine("Invalid IFSC Code");
-            return;
-        }
-
+        BankOperations bank = new BankOperations();
 
 
     //For Loop for Iterative Getting user Options

@@ -1,5 +1,5 @@
 ﻿
-using Bank_Application;
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ using System.Xml.Linq;
 
 namespace BankApplication
 {
-    internal class Bank: AllBanks
+    internal class Bank
     {
         public string BankName;
         //A List to Store Customer Details
@@ -22,12 +22,10 @@ namespace BankApplication
 
 
         //Constructor to allocate new List of Customers
-        public Bank(string bankName) 
+        public Bank() 
         {
-            BankName = bankName;
             customerList = new List<Customer>();
             customerDictionary = new Dictionary<int, Customer>();
-
 
         }
         //Method to Add Customer in the List

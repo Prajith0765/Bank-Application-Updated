@@ -11,21 +11,11 @@ namespace BankApplication
     internal class BankOperations : Bank
     {
 
-        private Bank bank;
-
-        public bool SetBank(Bank bank)
-        {
-            this.bank = bank;
-            return bank != null;
-        }
-
-        public void AddCustomer(Customer customer)
-        {
-            bank.AddCustomer(customer);
-        }
-
         //Method to Find the Customer Details by Entering the Name
         public Customer customerValue;
+
+       
+
         public Customer findCustomer(int accNumber)
         {
             customerDictionary.TryGetValue(accNumber, out customerValue);
