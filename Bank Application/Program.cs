@@ -11,7 +11,8 @@ public class Program
         IBank instance;
         BankOperations bank = new BankOperations();
         GetSet getSet = new GetSet();
-        
+
+    BankSelection:
         string[] banks = Enum.GetNames(typeof(BankEnum));
         for (int i = 0; i < banks.Length; i++)
         {
@@ -21,30 +22,31 @@ public class Program
         byte opt = 0;
         Byte.TryParse(Console.ReadLine(), out opt);
         BankEnum selectedBank = (BankEnum)opt;
+        instance = AssignInstance.GetBank(selectedBank);
         Console.WriteLine("=======================================================");
         Console.WriteLine("Welcome to " + selectedBank.ToString() + " Bank");
 
-    BankSelection:
-        switch (selectedBank)
-        {
-            case BankEnum.SBI:
-                new SBIBank();
-                break;
+    
+        //switch (selectedBank)
+        //{
+        //    case BankEnum.SBI:
+        //        new SBIBank();
+        //        break;
 
-            case BankEnum.HDFC:
-                new HDFCBank();
-                break;
-            case BankEnum.KVB:
-                new KVBBank();
-                break;
-            case BankEnum.IOB:
-                new IOBBank();
-                break;
-            case BankEnum.UBI:
-                new UBIBank(); 
-                break;
+        //    case BankEnum.HDFC:
+        //        new HDFCBank();
+        //        break;
+        //    case BankEnum.KVB:
+        //        new KVBBank();
+        //        break;
+        //    case BankEnum.IOB:
+        //        new IOBBank();
+        //        break;
+        //    case BankEnum.UBI:
+        //        new UBIBank(); 
+        //        break;
 
-        }
+        //}
 
 
 
@@ -58,7 +60,8 @@ public class Program
             Console.WriteLine("3. Deposit Amount");
             Console.WriteLine("4. Withdraw Amount");
             Console.WriteLine("5. Display Account Details");
-            Console.WriteLine("6.Exit...");
+            Console.WriteLine("6. Change Bank");
+            Console.WriteLine("7.Exit...");
             //Byte where the user option is stored
             byte option = Convert.ToByte(Console.ReadLine());
 
@@ -85,8 +88,12 @@ public class Program
                 case 5:
                     bank.displayDetails(getSet.getAccNumber());
                     break;
+                //Change the Bank Selected
+                case 6:
+                    goto BankSelection;
+                    
                 //Exiting from the loop
-                case 6: 
+                case 7: 
                     return;
 
             }
