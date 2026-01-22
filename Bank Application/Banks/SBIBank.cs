@@ -9,5 +9,12 @@ namespace Bank_Application.Banks
 {
     internal class SBIBank : BankOperations
     {
+        public SBIBank() { }
+
+        // Optional: expose a GetInstance that uses the singleton helper
+        public static SBIBank GetInstance()
+        {
+            return Singleton<SBIBank>.GetInstance();
+        }
     }
 }
